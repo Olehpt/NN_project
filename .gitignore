@@ -2,3 +2,4 @@
 src/__pycache__/
 data/dataset/
 data/dataset/household_power_consumption.txt
+results/models/

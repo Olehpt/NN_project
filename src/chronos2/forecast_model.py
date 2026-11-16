@@ -12,7 +12,7 @@ QUANTILE_LEVELS = [0.1, 0.5, 0.9]
 
 
 def load_model():
-    # Select GPU when available, otherwise use CPU.
+    """Load the original pretrained Chronos-2 model (zero-shot)."""
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     print(f"Loading model: {MODEL_NAME}")
@@ -20,11 +20,10 @@ def load_model():
 
     pipeline = Chronos2Pipeline.from_pretrained(
         MODEL_NAME,
-        device_map=device
+        device_map=device,
     )
 
     print("Model loaded successfully.")
-
     return pipeline
 
 
@@ -33,21 +32,18 @@ def predict_next_day(pipeline, context):
 
     if len(context) != CONTEXT_LENGTH:
         raise ValueError(
-            f"Expected {CONTEXT_LENGTH} input values, "
-            f"received {len(context)}"
+            f"Expected {CONTEXT_LENGTH} input values, received {len(context)}"
         )
 
     if not np.isfinite(context).all():
         raise ValueError("Input contains missing or non-finite values.")
 
-    # Generate a forecast and its quantiles.
     quantiles, point_forecast = pipeline.predict_quantiles(
         inputs=[context],
         prediction_length=PREDICTION_LENGTH,
-        quantile_levels=QUANTILE_LEVELS
+        quantile_levels=QUANTILE_LEVELS,
     )
 
-    # Extract the only time series and remove the batch dimension.
     prediction = point_forecast[0][0].detach().cpu().numpy()
     quantile_values = quantiles[0][0].detach().cpu().numpy()
 
