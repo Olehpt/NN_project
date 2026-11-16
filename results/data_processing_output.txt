@@ -1,0 +1,7 @@
+//terminal output copied from data_proccesing.py runtime
+
+Total days observed: 1409
+Total hours observed: 33816
+Train: X=(986, 24), y=(986, 24)
+Validation: X=(211, 24), y=(211, 24)
+Test: X=(212, 24), y=(212, 24)
