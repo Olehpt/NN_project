@@ -4,13 +4,13 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from src.chronos2.forecast_model import (
+from chronos2.load_model import (
     CONTEXT_LENGTH,
     PREDICTION_LENGTH,
     predict_next_day,
     load_model as load_zero_shot_model,
 )
-from src.chronos2.finetuned_forecast_model import (
+from chronos2.load_tunned_model import (
     load_model as load_finetuned_model,
 )
 

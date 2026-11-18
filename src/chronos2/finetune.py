@@ -11,13 +11,13 @@ from pathlib import Path
 import numpy as np
 from packaging.version import Version
 
-from src.chronos2.forecast_model import (
+from chronos2.load_model import (
     CONTEXT_LENGTH,
     PREDICTION_LENGTH,
     MODEL_NAME,
     load_model,
 )
-from src.chronos2.finetuned_forecast_model import FINETUNED_MODEL_PATH
+from chronos2.load_tunned_model import FINETUNED_MODEL_PATH
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
 DATASET_PATH = ROOT_DIR / "data" / "processed" / "forecasting_dataset.npz"

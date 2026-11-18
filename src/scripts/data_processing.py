@@ -1,3 +1,5 @@
+#create .npz with (X, y) pairs
+
 from pathlib import Path
 
 import numpy as np

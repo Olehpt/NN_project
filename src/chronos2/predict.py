@@ -1,31 +1,11 @@
+#predict using loadded models (load_model.py & load_tunned_model.py)
+
 import numpy as np
-import torch
-
-from chronos import Chronos2Pipeline
-
-MODEL_NAME = "amazon/chronos-2"
 
 CONTEXT_LENGTH = 24
 PREDICTION_LENGTH = 24
 
 QUANTILE_LEVELS = [0.1, 0.5, 0.9]
-
-
-def load_model():
-    """Load the original pretrained Chronos-2 model (zero-shot)."""
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-
-    print(f"Loading model: {MODEL_NAME}")
-    print(f"Device: {device}")
-
-    pipeline = Chronos2Pipeline.from_pretrained(
-        MODEL_NAME,
-        device_map=device,
-    )
-
-    print("Model loaded successfully.")
-    return pipeline
-
 
 def predict_next_day(pipeline, context):
     context = np.asarray(context, dtype=np.float32).reshape(-1)
