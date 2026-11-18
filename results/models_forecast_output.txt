@@ -1,0 +1,105 @@
+=== ELECTRICITY FORECAST ===
+Input: C:\Users\User\Desktop\nn_project\data\input.txt
+Input values: 24 hourly measurements (kW)
+Adaptation: the 24 supplied measurements are used as the model's forecast context; model weights are not updated during prediction.
+
+Loading Chronos-2 zero-shot...
+Loading model: amazon/chronos-2
+Device: cuda
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 170/170 [00:00<00:00, 644.40it/s]
+Model loaded successfully.
+
+--- Chronos-2 zero-shot ---
+Hour +01: 0.413 kW
+Hour +02: 0.366 kW
+Hour +03: 0.336 kW
+Hour +04: 0.317 kW
+Hour +05: 0.313 kW
+Hour +06: 0.349 kW
+Hour +07: 0.456 kW
+Hour +08: 0.658 kW
+Hour +09: 0.790 kW
+Hour +10: 0.828 kW
+Hour +11: 0.797 kW
+Hour +12: 0.744 kW
+Hour +13: 0.715 kW
+Hour +14: 0.725 kW
+Hour +15: 0.776 kW
+Hour +16: 0.849 kW
+Hour +17: 0.938 kW
+Hour +18: 1.056 kW
+Hour +19: 1.102 kW
+Hour +20: 1.061 kW
+Hour +21: 0.951 kW
+Hour +22: 0.791 kW
+Hour +23: 0.628 kW
+Hour +24: 0.496 kW
+
+Loading Chronos-2 fine-tuned (full)...
+Loading fine-tuned Chronos-2 (full) from: C:\Users\User\Desktop\nn_project\results\models\chronos2_finetuned_full
+Device: cuda
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 170/170 [00:00<00:00, 521.55it/s]
+Fine-tuned Chronos-2 (full) loaded successfully.
+
+--- Chronos-2 fine-tuned (full) ---
+Hour +01: 0.439 kW
+Hour +02: 0.400 kW
+Hour +03: 0.375 kW
+Hour +04: 0.355 kW
+Hour +05: 0.342 kW
+Hour +06: 0.371 kW
+Hour +07: 0.477 kW
+Hour +08: 0.691 kW
+Hour +09: 0.809 kW
+Hour +10: 0.833 kW
+Hour +11: 0.781 kW
+Hour +12: 0.714 kW
+Hour +13: 0.681 kW
+Hour +14: 0.679 kW
+Hour +15: 0.725 kW
+Hour +16: 0.798 kW
+Hour +17: 0.897 kW
+Hour +18: 1.025 kW
+Hour +19: 1.076 kW
+Hour +20: 1.034 kW
+Hour +21: 0.904 kW
+Hour +22: 0.744 kW
+Hour +23: 0.596 kW
+Hour +24: 0.484 kW
+
+Loading Chronos-2 fine-tuned (LoRA)...
+Loading fine-tuned Chronos-2 (lora) from: C:\Users\User\Desktop\nn_project\results\models\chronos2_finetuned_lora
+Device: cuda
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 170/170 [00:00<00:00, 522.09it/s]
+C:\Users\User\Desktop\nn_project\.venv\Lib\site-packages\transformers\modeling_utils.py:3303: FutureWarning: `is_gradient_checkpointing` is deprecated and will be removed in v6. Use `is_activation_checkpointing` instead.
+  warnings.warn(
+Fine-tuned Chronos-2 (lora) loaded successfully.
+
+--- Chronos-2 fine-tuned (LoRA) ---
+Hour +01: 0.422 kW
+Hour +02: 0.375 kW
+Hour +03: 0.344 kW
+Hour +04: 0.320 kW
+Hour +05: 0.310 kW
+Hour +06: 0.346 kW
+Hour +07: 0.455 kW
+Hour +08: 0.669 kW
+Hour +09: 0.803 kW
+Hour +10: 0.841 kW
+Hour +11: 0.799 kW
+Hour +12: 0.739 kW
+Hour +13: 0.707 kW
+Hour +14: 0.714 kW
+Hour +15: 0.768 kW
+Hour +16: 0.850 kW
+Hour +17: 0.947 kW
+Hour +18: 1.079 kW
+Hour +19: 1.140 kW
+Hour +20: 1.092 kW
+Hour +21: 0.961 kW
+Hour +22: 0.787 kW
+Hour +23: 0.623 kW
+Hour +24: 0.493 kW
+
+Saved forecast: C:\Users\User\Desktop\nn_project\data\output.txt

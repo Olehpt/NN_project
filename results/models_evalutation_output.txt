@@ -1,0 +1,124 @@
+============ EVALUATING CHRONOS-2 ZERO-SHOT ============
+=== TEST DATA ===
+Samples: 212
+Input shape: (212, 24)
+Target shape: (212, 24)
+
+=== CHRONOS-2 ZERO-SHOT ===
+Loading model: amazon/chronos-2
+Device: cuda
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 170/170 [00:00<00:00, 642.58it/s]
+Model loaded successfully.
+Processed 16/212 samples
+Processed 32/212 samples
+Processed 48/212 samples
+Processed 64/212 samples
+Processed 80/212 samples
+Processed 96/212 samples
+Processed 112/212 samples
+Processed 128/212 samples
+Processed 144/212 samples
+Processed 160/212 samples
+Processed 176/212 samples
+Processed 192/212 samples
+Processed 208/212 samples
+Processed 212/212 samples
+MAE:  0.5965 kW
+RMSE: 0.8429 kW
+R2:   0.1393
+
+=== SEASONAL NAIVE ===
+MAE:  0.6557 kW
+RMSE: 0.9683 kW
+R2:   -0.1360
+
+Saved predictions: C:\Users\User\Desktop\nn_project\results\evaluation\zero-shot\forecasts\test_predictions.csv
+Saved metrics: C:\Users\User\Desktop\nn_project\results\evaluation\zero-shot\forecasts\test_metrics_zero_shot.csv
+Saved plot: C:\Users\User\Desktop\nn_project\results\evaluation\zero-shot\plots\test_average_profile.png
+
+============ EVALUATING CHRONOS-2 FINE-TUNED (FULL) ============
+=== TEST DATA ===
+Samples: 212
+Input shape: (212, 24)
+Target shape: (212, 24)
+
+=== CHRONOS-2 FINE-TUNED (FULL) ===
+Loading fine-tuned Chronos-2 (full) from: C:\Users\User\Desktop\nn_project\results\models\chronos2_finetuned_full
+Device: cuda
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 170/170 [00:00<00:00, 515.55it/s]
+Fine-tuned Chronos-2 (full) loaded successfully.
+Processed 16/212 samples
+Processed 32/212 samples
+Processed 48/212 samples
+Processed 64/212 samples
+Processed 80/212 samples
+Processed 96/212 samples
+Processed 112/212 samples
+Processed 128/212 samples
+Processed 144/212 samples
+Processed 160/212 samples
+Processed 176/212 samples
+Processed 192/212 samples
+Processed 208/212 samples
+Processed 212/212 samples
+MAE:  0.5418 kW
+RMSE: 0.7855 kW
+R2:   0.2525
+
+=== SEASONAL NAIVE ===
+MAE:  0.6557 kW
+RMSE: 0.9683 kW
+R2:   -0.1360
+
+Saved predictions: C:\Users\User\Desktop\nn_project\results\evaluation\full\forecasts\test_predictions_finetuned.csv
+Saved metrics: C:\Users\User\Desktop\nn_project\results\evaluation\full\forecasts\test_metrics_finetuned.csv
+Saved plot: C:\Users\User\Desktop\nn_project\results\evaluation\full\plots\test_average_profile_finetuned.png
+
+============ EVALUATING CHRONOS-2 FINE-TUNED (LORA) ============
+=== TEST DATA ===
+Samples: 212
+Input shape: (212, 24)
+Target shape: (212, 24)
+
+=== CHRONOS-2 FINE-TUNED (LORA) ===
+Loading fine-tuned Chronos-2 (lora) from: C:\Users\User\Desktop\nn_project\results\models\chronos2_finetuned_lora
+Device: cuda
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 170/170 [00:00<00:00, 558.36it/s]
+C:\Users\User\Desktop\nn_project\.venv\Lib\site-packages\transformers\modeling_utils.py:3303: FutureWarning: `is_gradient_checkpointing` is deprecated and will be removed in v6. Use `is_activation_checkpointing` instead.
+  warnings.warn(
+Fine-tuned Chronos-2 (lora) loaded successfully.
+Processed 16/212 samples
+Processed 32/212 samples
+Processed 48/212 samples
+Processed 64/212 samples
+Processed 80/212 samples
+Processed 96/212 samples
+Processed 112/212 samples
+Processed 128/212 samples
+Processed 144/212 samples
+Processed 160/212 samples
+Processed 176/212 samples
+Processed 192/212 samples
+Processed 208/212 samples
+Processed 212/212 samples
+MAE:  0.5732 kW
+RMSE: 0.8249 kW
+R2:   0.1757
+
+=== SEASONAL NAIVE ===
+MAE:  0.6557 kW
+RMSE: 0.9683 kW
+R2:   -0.1360
+
+Saved predictions: C:\Users\User\Desktop\nn_project\results\evaluation\lora\forecasts\test_predictions_finetuned.csv
+Saved metrics: C:\Users\User\Desktop\nn_project\results\evaluation\lora\forecasts\test_metrics_finetuned.csv
+Saved plot: C:\Users\User\Desktop\nn_project\results\evaluation\lora\plots\test_average_profile_finetuned.png
+
+=== MODEL COMPARISON ===
+Chronos-2 zero-shot                MAE=0.5965 kW  RMSE=0.8429 kW  R2=0.1393
+Chronos-2 fine-tuned (full)        MAE=0.5418 kW  RMSE=0.7855 kW  R2=0.2525
+Chronos-2 fine-tuned (LoRA)        MAE=0.5732 kW  RMSE=0.8249 kW  R2=0.1757
+Seasonal Naive                     MAE=0.6557 kW  RMSE=0.9683 kW  R2=-0.1360
+
+Saved comparison: C:\Users\User\Desktop\nn_project\results\evaluation\model_comparison.csv
